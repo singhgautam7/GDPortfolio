@@ -11,12 +11,12 @@ import TimelineComponent from "./TimelineComponent";
 function Timeline() {
   return (
     <section>
-      <div className="contact-section">
+      <div className="timeline-section">
         <Particle />
 
-        <Container className="home-content">
+        <Container className="contact-content">
           <Row>
-            <Col md={7} className="home-header">
+            <Col md={7}>
               <TimelineHeader />
             </Col>
             <ColSectionImage
