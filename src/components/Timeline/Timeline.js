@@ -6,6 +6,7 @@ import timelineLogo from "../../assets/warrior.svg";
 import Particle from "../UI/Particle";
 import ColSectionImage from "../UI/ColSectionImage";
 import TimelineHeader from "./TimelineHeader";
+import TimelineComponent from "./TimelineComponent";
 
 function Timeline() {
   return (
@@ -26,7 +27,9 @@ function Timeline() {
             />
           </Row>
           <Row>
-            {/* <HomeColSocial className="contact-section-social"/> */}
+            <Col md={12} className="contact-section-social">
+                <TimelineComponent />
+            </Col>
           </Row>
         </Container>
       </div>
