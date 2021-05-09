@@ -433,7 +433,7 @@ html {
 .home-photos-image-curve {
   margin: auto;
   width: 80%;
-  height: 600px;
+  height: 35rem;
   object-fit: cover;
   border-radius: 20px;
 }
@@ -446,6 +446,7 @@ html {
 @media (max-width: 767px) {
   .home-photos-image-curve {
     width: 95%;
+    height: 28rem;
   }
 }
 

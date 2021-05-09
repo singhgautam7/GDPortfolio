@@ -48,6 +48,16 @@ function NavBar() {
                 <i className="fas fa-home"></i> Home
               </Nav.Link>
             </Nav.Item>
+            
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/timeline"
+                onClick={() => updateExpanded(false)}
+              >
+                <i className="fas fa-stream"></i> Timeline
+              </Nav.Link>
+            </Nav.Item>
 
             <Nav.Item>
               <Nav.Link
@@ -58,6 +68,7 @@ function NavBar() {
                 <i className="fas fa-id-card"></i> Contact
               </Nav.Link>
             </Nav.Item>
+
             {/* <Nav.Item>
               <Nav.Link
                 as={Link}
