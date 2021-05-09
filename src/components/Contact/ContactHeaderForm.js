@@ -19,7 +19,7 @@ function ContactHeaderForm() {
     hasError: nameHasError,
     valueChangeHandler: nameChangeHandler,
     inputBlurHandler: nameBlurHandler,
-    reset: resetName,
+    // reset: resetName,
   } = useInput(isNotEmpty);
 
   const {
@@ -28,13 +28,21 @@ function ContactHeaderForm() {
     hasError: reasonHasError,
     valueChangeHandler: reasonChangeHandler,
     inputBlurHandler: reasonBlurHandler,
-    reset: resetReason,
+    // reset: resetReason,
   } = useInput(isReason);
 
   // const descriptionRef = useRef("");
   const [descriptionValue, setDescriptionValue] = useState("");
   const [cityValue, setCityValue] = useState("");
-  const anchorRef = useRef(null)
+  const anchorRef = useRef(null);
+
+  let emailSubject = `${nameValue} wants to enquire for ${reasonValue}`;
+  let emailBodyCity = cityValue !== '' ? `City: ${cityValue}` : ``
+  let emailBodyDescription = descriptionValue !== '' ? `Description: ${descriptionValue}` : ``;
+  let emailBody = `Name: ${nameValue}
+Reason: ${reasonValue}
+${emailBodyCity}
+${emailBodyDescription}`;
 
   const normalStyle = {
     backgroundColor: "black",
@@ -49,13 +57,13 @@ function ContactHeaderForm() {
     setCityValue(event.target.value);
   };
 
-  const resetDescription = () => {
-    setDescriptionValue("");
-  };
+  // const resetDescription = () => {
+  //   setDescriptionValue("");
+  // };
 
-  const resetCity = () => {
-    setCityValue("");
-  };
+  // const resetCity = () => {
+  //   setCityValue("");
+  // };
 
   const submitButtonHandler = (event) => {
     event.preventDefault();
@@ -72,7 +80,8 @@ function ContactHeaderForm() {
       return;
     }
 
-    anchorRef.current.click()
+    // Click anchor to open mail
+    anchorRef.current.click();
 
     // resetName();
     // resetReason();
@@ -155,14 +164,13 @@ function ContactHeaderForm() {
         <a
           style={{ visibility: "hidden" }}
           ref={anchorRef}
-          class="dark"
+          className="dark"
           href="#mailgo"
           data-address="gautmsingh1997"
           data-domain="gmail.com"
-          data-subject={reasonValue}
-          data-body={descriptionValue}
-        >
-        </a>
+          data-subject={emailSubject}
+          data-body={emailBody}
+        > </a>
       </Form>
     </section>
   );

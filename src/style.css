@@ -807,6 +807,12 @@ html {
   min-height: 94vh;
 }
 
+.contact-section-social {
+  text-align: center !important;
+  padding-top: 50px;
+  color: white !important;
+}
+
 .contact-content {
   padding: 9rem 0 2rem !important;
   color: whitesmoke;
@@ -814,6 +820,7 @@ html {
 }
 
 .contact-content-form {
+  /* margin-bottom: 25px !important; */
   padding-left: 10px !important;
   padding-right: 10px !important;
 }

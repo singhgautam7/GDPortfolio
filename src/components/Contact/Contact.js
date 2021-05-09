@@ -25,6 +25,9 @@ function Contact() {
               alt="contact pic"
             />
           </Row>
+          {/* <Row>
+            <HomeColSocial className="contact-section-social"/>
+          </Row> */}
         </Container>
       </div>
     </section>

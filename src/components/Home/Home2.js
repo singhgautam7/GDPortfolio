@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import "../../style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HomePhotos from "./HomePhotos";
+import HomeColSocial from "./HomeColSocial";
 
 
 function Home2() {
@@ -28,34 +29,7 @@ function Home2() {
             </Col>
           </Row>
           <Row>
-            <Col md={12} className="home-about-social">
-              <h1><span className="purple">CONNECT </span>WITH ME</h1>
-              <p>
-                Feel free to <span className="purple">connect </span>with me on
-              </p>
-              <ul className="home-about-social-links">
-                <li className="social-icons">
-                  <a
-                    href="https://www.linkedin.com/in/gloria-dunwell-514412b1/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="icon-colour  home-social-icons"
-                  >
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-                <li className="social-icons">
-                  <a
-                    href="https://www.instagram.com/gloriadunwell/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="icon-colour home-social-icons"
-                  >
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                </li>
-              </ul>
-            </Col>
+            <HomeColSocial className="home-about-social"/>
           </Row>
           <Row>
           <Col md={12}>
