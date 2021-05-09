@@ -1,12 +1,14 @@
-import { React } from "react";
+import { React, useRef } from "react";
 import "../../style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Col, FormGroup, Button } from "react-bootstrap";
 import ContactHeaderContent from "./ContactHeaderContent";
 import useInput from "../hooks/useInput";
+import mailgo from "mailgo";
 
+const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const isNotEmpty = (value) => value.trim() !== "";
-const isEmail = (value) => value.includes("@");
+const isEmail = (value) => value.match(validRegex);
 const isReason = (value) =>
   value.trim() !== " -- select an option -- " && value.trim() !== "";
 
@@ -36,7 +38,9 @@ function ContactHeaderForm() {
     valueChangeHandler: reasonChangeHandler,
     inputBlurHandler: reasonBlurHandler,
     reset: resetReason,
-  } = useInput(isReason);
+  } = useInput(isReason); 
+
+  const descriptionRef = useRef('');
 
   const normalStyle = {
     backgroundColor: "black",
@@ -65,6 +69,7 @@ function ContactHeaderForm() {
     resetName();
     resetEmail();
     resetReason();
+    descriptionRef.current.value = ''
   };
 
   return (
@@ -103,7 +108,7 @@ function ContactHeaderForm() {
               isInvalid={emailHasError}
             />
             <Form.Control.Feedback type="invalid" tooltip>
-              This will help me to contact you back. Enter a valid email
+              Enter a valid email. This will help me to contact you back
             </Form.Control.Feedback>
           </FormGroup>
 
@@ -117,10 +122,7 @@ function ContactHeaderForm() {
               onBlur={reasonBlurHandler}
               isInvalid={reasonHasError}
             >
-              <option selected value>
-                {" "}
-                -- select an option --{" "}
-              </option>
+              <option> -- select an option -- </option>
               <option>Yoga Classes</option>
               <option>Fitness Counselling</option>
               <option>Photoshoot Enquiry</option>
@@ -138,6 +140,7 @@ function ContactHeaderForm() {
             <Form.Label>Description</Form.Label>
             <Form.Control
               style={normalStyle}
+              ref={descriptionRef}
               as="textarea"
               placeholder="Need some more space to express yourself?"
             />
