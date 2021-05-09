@@ -813,11 +813,19 @@ html {
   text-align: left;
 }
 
+.contact-content-form {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
 .contact-section-form-input {
-  background-color: #000000 im !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: grey !important;
 }
 
 .contact-section-form-input:focus {
-  border-color: #4f005f im !important;
-  background: #f6dbfc;
+  outline: none !important;
+  border-color: purple !important;
+  /* background: #4f005f !important; */
 }

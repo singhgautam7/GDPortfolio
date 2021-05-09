@@ -1,14 +1,14 @@
-import { React, useRef } from "react";
+import { React, useRef, useState } from "react";
 import "../../style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Col, FormGroup, Button } from "react-bootstrap";
 import ContactHeaderContent from "./ContactHeaderContent";
 import useInput from "../hooks/useInput";
-import mailgo from "mailgo";
 
-const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+// const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+// const isEmail = (value) => value.match(validRegex);
+
 const isNotEmpty = (value) => value.trim() !== "";
-const isEmail = (value) => value.match(validRegex);
 const isReason = (value) =>
   value.trim() !== " -- select an option -- " && value.trim() !== "";
 
@@ -23,57 +23,65 @@ function ContactHeaderForm() {
   } = useInput(isNotEmpty);
 
   const {
-    value: emailValue,
-    isValid: emailIsValid,
-    hasError: emailHasError,
-    valueChangeHandler: emailChangeHandler,
-    inputBlurHandler: emailBlurHandler,
-    reset: resetEmail,
-  } = useInput(isEmail);
-
-  const {
     value: reasonValue,
     isValid: reasonIsValid,
     hasError: reasonHasError,
     valueChangeHandler: reasonChangeHandler,
     inputBlurHandler: reasonBlurHandler,
     reset: resetReason,
-  } = useInput(isReason); 
+  } = useInput(isReason);
 
-  const descriptionRef = useRef('');
+  // const descriptionRef = useRef("");
+  const [descriptionValue, setDescriptionValue] = useState("");
+  const [cityValue, setCityValue] = useState("");
+  const anchorRef = useRef(null)
 
   const normalStyle = {
     backgroundColor: "black",
     color: "white",
   };
 
-  const nameClasses = nameHasError ? "invalid" : "valid";
-  const emailClasses = emailHasError ? "invalid" : "valid";
-  const reasonClasses = reasonHasError ? "invalid" : "valid";
-  let formIsValid = false;
+  const descriptionInputChangeHandler = (event) => {
+    setDescriptionValue(event.target.value);
+  };
 
-  if (nameIsValid && emailIsValid && reasonIsValid) {
-    formIsValid = true;
-  }
+  const cityInputChangeHandler = (event) => {
+    setCityValue(event.target.value);
+  };
+
+  const resetDescription = () => {
+    setDescriptionValue("");
+  };
+
+  const resetCity = () => {
+    setCityValue("");
+  };
 
   const submitButtonHandler = (event) => {
     event.preventDefault();
 
-    if (!formIsValid) {
+    // If name is not valid, then show the error for that
+    if (!nameIsValid) {
       nameBlurHandler();
-      emailBlurHandler();
+      return;
+    }
+
+    // If reason is not valid, show error
+    if (!reasonIsValid) {
       reasonBlurHandler();
       return;
     }
 
-    resetName();
-    resetEmail();
-    resetReason();
-    descriptionRef.current.value = ''
+    anchorRef.current.click()
+
+    // resetName();
+    // resetReason();
+    // resetDescription();
+    // resetCity();
   };
 
   return (
-    <section>
+    <section className="contact-content-form">
       <div>
         <ContactHeaderContent />
       </div>
@@ -96,23 +104,7 @@ function ContactHeaderForm() {
         </Form.Row>
 
         <Form.Row>
-          <FormGroup as={Col} md={5}>
-            <Form.Label>Email*</Form.Label>
-            <Form.Control
-              style={normalStyle}
-              placeholder="your@mail.com"
-              type="email"
-              value={emailValue}
-              onChange={emailChangeHandler}
-              onBlur={emailBlurHandler}
-              isInvalid={emailHasError}
-            />
-            <Form.Control.Feedback type="invalid" tooltip>
-              Enter a valid email. This will help me to contact you back
-            </Form.Control.Feedback>
-          </FormGroup>
-
-          <Form.Group as={Col} md={5}>
+          <Form.Group as={Col} md={6}>
             <Form.Label>Reason*</Form.Label>
             <Form.Control
               style={normalStyle}
@@ -133,6 +125,16 @@ function ContactHeaderForm() {
               You have to select one of the option
             </Form.Control.Feedback>
           </Form.Group>
+
+          <FormGroup as={Col} md={4}>
+            <Form.Label>City (State)</Form.Label>
+            <Form.Control
+              style={normalStyle}
+              value={cityValue}
+              onChange={cityInputChangeHandler}
+              placeholder="Where are your from?"
+            />
+          </FormGroup>
         </Form.Row>
 
         <Form.Row>
@@ -140,7 +142,8 @@ function ContactHeaderForm() {
             <Form.Label>Description</Form.Label>
             <Form.Control
               style={normalStyle}
-              ref={descriptionRef}
+              value={descriptionValue}
+              onChange={descriptionInputChangeHandler}
               as="textarea"
               placeholder="Need some more space to express yourself?"
             />
@@ -149,6 +152,17 @@ function ContactHeaderForm() {
         <Button variant="primary" type="submit" onClick={submitButtonHandler}>
           Submit
         </Button>
+        <a
+          style={{ visibility: "hidden" }}
+          ref={anchorRef}
+          class="dark"
+          href="#mailgo"
+          data-address="gautmsingh1997"
+          data-domain="gmail.com"
+          data-subject={reasonValue}
+          data-body={descriptionValue}
+        >
+        </a>
       </Form>
     </section>
   );

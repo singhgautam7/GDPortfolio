@@ -9,6 +9,7 @@ import Footer from "./components/UI/Footer";
 import Navbar from "./components/UI/Navbar";
 import Home from "./components/Home/Home";
 import Contact from "./components/Contact/Contact";
+require("mailgo/dist/mailgo.min.js");
 
 function App() {
   // load state to show loader
