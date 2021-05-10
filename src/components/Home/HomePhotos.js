@@ -30,7 +30,7 @@ function HomePhotos() {
                 autoPlay={true}
                 indicators={false}
                 interval={3000}
-                pause={"hover"}
+                pause={false}
                 controls={false}
               >
                 <Carousel.Item>
