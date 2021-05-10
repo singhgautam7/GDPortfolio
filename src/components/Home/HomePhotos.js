@@ -15,7 +15,7 @@ function HomePhotos() {
         <Row>
           <Col md={12} className="home-about-social">
             <h1>
-              MOMENTS CAPTURED ON<span className="purple"> PHOTOS</span>
+              MOMENTS CAPTURED IN<span className="purple"> PHOTOS</span>
             </h1>
             <p>
               Excerpts from my <span className="purple">Yoga</span> Shoot
