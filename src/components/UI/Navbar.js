@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import "../../style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
 function NavBar() {
@@ -88,16 +89,16 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item> */}
 
-            {/* <Nav.Item className="fork-btn">
+            <Nav.Item className="fork-btn">
               <Button
-                href="https://github.com/soumyajit4419/Portfolio"
+                href="https://www.instagram.com/gloriadunwell/"
                 target="_blank"
+                rel="noreferrer"
                 className="fork-btn-inner"
               >
-                <i className="fas fa-code-branch"></i>{" "}
-                <i className="far fa-star"></i>
+                <i className="fab fa-instagram"></i>
               </Button>
-            </Nav.Item> */}
+            </Nav.Item>
 
           </Nav>
         </Navbar.Collapse>
