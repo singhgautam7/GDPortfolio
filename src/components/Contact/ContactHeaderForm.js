@@ -36,7 +36,7 @@ function ContactHeaderForm() {
   const [cityValue, setCityValue] = useState("");
   const anchorRef = useRef(null);
 
-  let emailSubject = `${nameValue} wants to enquire for ${reasonValue}`;
+  let emailSubject = `New enquiry from portfolio: ${nameValue} wants to enquire for ${reasonValue}`;
   let emailBodyCity = cityValue !== '' ? `City: ${cityValue}` : ``
   let emailBodyDescription = descriptionValue !== '' ? `Description: ${descriptionValue}` : ``;
   let emailBody = `Name: ${nameValue}
@@ -166,7 +166,7 @@ ${emailBodyDescription}`;
           ref={anchorRef}
           className="dark"
           href="#mailgo"
-          data-address="gautmsingh1997"
+          data-address="yoginigloria"
           data-domain="gmail.com"
           data-subject={emailSubject}
           data-body={emailBody}
