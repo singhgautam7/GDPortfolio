@@ -154,7 +154,7 @@ ${emailBodyDescription}`;
               value={descriptionValue}
               onChange={descriptionInputChangeHandler}
               as="textarea"
-              placeholder="Need some more space to express yourself?"
+              placeholder="Need more space to express yourself?"
             />
           </FormGroup>
         </Form.Row>
