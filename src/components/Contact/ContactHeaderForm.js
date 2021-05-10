@@ -36,7 +36,7 @@ function ContactHeaderForm() {
   const [cityValue, setCityValue] = useState("");
   const anchorRef = useRef(null);
 
-  let emailSubject = `New enquiry from portfolio: ${nameValue} wants to enquire for ${reasonValue}`;
+  let emailSubject = `New enquiry from portfolio: ${nameValue} wants to know about ${reasonValue}`;
   let emailBodyCity = cityValue !== '' ? `City: ${cityValue}` : ``
   let emailBodyDescription = descriptionValue !== '' ? `Description: ${descriptionValue}` : ``;
   let emailBody = `Name: ${nameValue}

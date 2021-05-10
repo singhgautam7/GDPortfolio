@@ -851,3 +851,16 @@ html {
   padding-right: 10px;
   min-height: 94vh;
 }
+
+.not-found-content {
+  padding: 9rem 0 2rem !important;
+  color: whitesmoke;
+  text-align: left;
+}
+
+.not-found-description {
+  color: white !important;
+  padding-top: 25vh !important;
+  padding-bottom: 20px !important;
+  text-align: center;
+}

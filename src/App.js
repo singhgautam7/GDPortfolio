@@ -10,6 +10,7 @@ import Navbar from "./components/UI/Navbar";
 import Home from "./components/Home/Home";
 import Contact from "./components/Contact/Contact";
 import Timeline from "./components/Timeline/Timeline";
+import NotFound from "./components/NotFound/NotFound";
 require("mailgo/dist/mailgo.min.js");
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/contact" component={Contact} />
           <Route path="/timeline" component={Timeline} />
+          <Route path="*" component={NotFound} />
         </Switch>
         <Footer />
       </div>
