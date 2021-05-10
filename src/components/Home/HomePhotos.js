@@ -28,10 +28,10 @@ function HomePhotos() {
               <Carousel
                 fade
                 autoPlay={true}
-                indicators={false}
+                indicators={true}
                 interval={3000}
                 pause={false}
-                controls={false}
+                controls={true}
               >
                 <Carousel.Item>
                   <ImageCurve src={logo1} alt="logo1"/>

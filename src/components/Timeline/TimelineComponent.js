@@ -2,13 +2,14 @@ import React from "react";
 import { Timeline, TimelineItem } from "vertical-timeline-component-for-react";
 import "../../style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import TimelineDate from "./TimelineDate";
 
 function TimelineComponent() {
-  const dateStyleBlack = { background: "#1a1c20", color: "white" };
-  const dateStyleColored = { background: "purple", color: "white" };
+  const dateStyleBlack = { background: "#111111", color: "white" };
+  // const dateStyleColored = { background: "purple", color: "white" };
 
   const boxContainerBasic = {
-    background: "#45046a",
+    // background: "#45046a",
     padding: "20px",
     borderRadius: "8px",
     // boxShadow: "0.5rem 0.5rem 2rem 0 #931a25",
@@ -17,14 +18,16 @@ function TimelineComponent() {
 
   const boxParaStyle = {
     paddingTop: "5px",
+    color: "#90a4ae"
   };
 
   return (
-    <Timeline lineColor={"#bc658d"} animate={false}>
+    <Timeline lineColor={"purple"} animate={false}>
       <TimelineItem
         key="001"
+        // dateComponent={<TimelineDate date="17th May, 1995"/>}
         dateText="17th May, 1995"
-        dateInnerStyle={dateStyleColored}
+        dateInnerStyle={dateStyleBlack}
         bodyContainerStyle={boxContainerBasic}
       >
         <h4>The miracle of life</h4>
@@ -62,7 +65,7 @@ function TimelineComponent() {
 
       <TimelineItem
         key="004"
-        dateText="April 2015"
+        dateText="June 2012 - April 2015"
         dateInnerStyle={dateStyleBlack}
         bodyContainerStyle={boxContainerBasic}
       >
@@ -92,7 +95,7 @@ function TimelineComponent() {
       <TimelineItem
         key="006"
         dateText="Late 2017"
-        dateInnerStyle={dateStyleColored}
+        dateInnerStyle={dateStyleBlack}
         bodyContainerStyle={boxContainerBasic}
       >
         <h4>Life Changing Incident</h4>
@@ -126,7 +129,7 @@ function TimelineComponent() {
       <TimelineItem
         key="008"
         dateText="Mid 2019"
-        dateInnerStyle={dateStyleColored}
+        dateInnerStyle={dateStyleBlack}
         bodyContainerStyle={boxContainerBasic}
       >
         <h4>Meet your Personal Yoga Trainer!</h4>
@@ -141,7 +144,7 @@ function TimelineComponent() {
       <TimelineItem
         key="009"
         dateText="Dec 2020 - Present"
-        dateInnerStyle={dateStyleColored}
+        dateInnerStyle={dateStyleBlack}
         bodyContainerStyle={boxContainerBasic}
       >
         <h4>Job as a Fitness Coach</h4>
