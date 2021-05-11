@@ -2,7 +2,7 @@ import React from "react";
 import { Timeline, TimelineItem } from "vertical-timeline-component-for-react";
 import "../../style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import TimelineDate from "./TimelineDate";
+// import TimelineDate from "./TimelineDate";
 
 function TimelineComponent() {
   const dateStyleBlack = { background: "#111111", color: "white" };

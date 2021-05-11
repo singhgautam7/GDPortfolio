@@ -2,9 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "../../style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import timelineLogo from "../../assets/warrior.svg";
 import Particle from "../UI/Particle";
-import ColSectionImage from "../UI/ColSectionImage";
 import NotFoundHeader from "./NotFoundHeader";
 
 function NotFound() {
