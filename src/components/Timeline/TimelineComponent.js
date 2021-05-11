@@ -18,8 +18,19 @@ function TimelineComponent() {
 
   const boxParaStyle = {
     paddingTop: "5px",
-    color: "#90a4ae"
+    color: "#90a4ae",
   };
+
+  const onefitplus_link = (
+    <a
+      href="https://www.onefitplus.com/instructors/6010c780baecf16e621d4b5a/Gloria"
+      style={{ color: "red" }}
+      target="_blank"
+      rel="noreferrer"
+    >
+      <u>OneFitPlus</u>
+    </a>
+  );
 
   return (
     <Timeline lineColor={"purple"} animate={false}>
@@ -44,7 +55,8 @@ function TimelineComponent() {
         <p style={boxParaStyle}>
           Cleared my 10th standard examinations around this time. As every other
           Indian kid in 10th std, I too had no idea about what I would do in
-          future
+          future. I did my 10th std schooling from Shiva Public School, Bhilai
+          3.
         </p>
       </TimelineItem>
 
@@ -56,10 +68,8 @@ function TimelineComponent() {
       >
         <h4>Senior secondary schooling</h4>
         <p style={boxParaStyle}>
-          Cleared my 10th standard examinations around this time. As every other
-          Indian kid in 10th std, I too had no idea about what I would do in
-          future. I did my 10th std schooling from Shiva Public School, Bhilai
-          3.
+          Finished my 12th std schooling from Lions Higher Secondary school.
+          After the examinations, I decided to persue B.Com.
         </p>
       </TimelineItem>
 
@@ -87,8 +97,9 @@ function TimelineComponent() {
         <p style={boxParaStyle}>
           Now I started my career as a Team Leader at Nexton Technologies,
           Bangalore. Yes, there were many cities I have lived my fare share of
-          life in. I was working pretty fine there shockingly, I still had no
-          idea about what fitness is. I was just going with the flow.
+          life in. I was working pretty fine there shockingly, but I still
+          didn't much enjoy my work there. It always felt like I was supposed to
+          do something else.
         </p>
       </TimelineItem>
 
@@ -101,12 +112,12 @@ function TimelineComponent() {
         <h4>Life Changing Incident</h4>
         <p style={boxParaStyle}>
           By the end of 2017, my life completely changed. Something happened in
-          my life which made me realise how precious life is. This was the time
+          my life which made me realize how precious life is. This was the time
           when I understood that{" "}
           <i style={{ color: "#f6acc8" }}>
             everyone has a purpose in their life, and I have one too
           </i>
-          .
+          . So I made it my quest to find that purpose.
         </p>
       </TimelineItem>
 
@@ -118,11 +129,10 @@ function TimelineComponent() {
       >
         <h4>Joined Gym</h4>
         <p style={boxParaStyle}>
-          After giving it a lot of thought, I ultimately came to the decision of
-          helping other people get healthy and fit. But for that to happen, I
-          have to learn and grow myself too. So I joined a gym and started
-          practicing Yoga. It was hard to catch in the beginning, but when I got
-          the hang of it, I totally fell in love with it!
+          In the persuit of finding it, I thought why not try keeping myself
+          healthy and fit? So I joined the gym to learn Yoga. It was pretty
+          tough in the beginning, but I after giving it some time, I totlly fell
+          in love with it!
         </p>
       </TimelineItem>
 
@@ -134,8 +144,8 @@ function TimelineComponent() {
       >
         <h4>Meet your Personal Yoga Trainer!</h4>
         <p style={boxParaStyle}>
-          When I became confident enough on my Yoga skills, I became a personal
-          yoga trainer. When I started teaching Yoga myself, I realised that I
+          Once I was confident enough about my Yoga skills, I became a personal
+          Yoga trainer. When I started teaching Yoga myself, I realised that I
           have never felt so happy doing something. The quote was definitely
           true- "Your job doesn't feel like a job if you love doing it."
         </p>
@@ -149,10 +159,10 @@ function TimelineComponent() {
       >
         <h4>Job as a Fitness Coach</h4>
         <p style={boxParaStyle}>
-          In December 2019, I joined OneFitPlus as a fitness coach. I am still
-          working here. I help people here to get fit here (mostly lose fat).
-          Most of my work involves broadcasting my tradmill, spin bike or yoga
-          live sessions to multiple clients at once.
+          In December 2019, I joined {onefitplus_link} as a fitness coach. Here,
+          I help people to get fit (mostly lose fat) by broadcasting my live
+          treadmill, spin bike and yoga sessions. I also help them resolve their
+          fitness related queries.
         </p>
       </TimelineItem>
     </Timeline>

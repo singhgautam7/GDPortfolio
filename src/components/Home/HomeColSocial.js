@@ -33,6 +33,16 @@ function HomeColSocial(props) {
             <i className="fab fa-instagram"></i>
           </a>
         </li>
+        <li className="social-icons">
+          <a
+            href="https://www.onefitplus.com/instructors/6010c780baecf16e621d4b5a/Gloria"
+            target="_blank"
+            rel="noreferrer"
+            className="icon-colour home-social-icons"
+          >
+            <i className="fas fa-briefcase"></i>
+          </a>
+        </li>
       </ul>
     </Col>
   );

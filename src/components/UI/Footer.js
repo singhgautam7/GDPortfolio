@@ -37,6 +37,16 @@ function Footer() {
                 <i className="fab fa-instagram"></i>
               </a>
             </li>
+            <li className="social-icons">
+              <a
+                href="https://www.onefitplus.com/instructors/6010c780baecf16e621d4b5a/Gloria"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: "white" }}
+              >
+                <i className="fas fa-briefcase"></i>
+              </a>
+            </li>
           </ul>
         </Col>
       </Row>
