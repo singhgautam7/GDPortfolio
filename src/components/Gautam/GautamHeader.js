@@ -18,11 +18,11 @@ function GautamHeader() {
         <br />
         A river's goal is to reach the sea. It has to travel tremendous
         distance, and has to face all kids of huge rocks. But it never stops
-        flowing. Similarly, I have failth that even you won't stop chasing your
+        flowing. Similarly, I have faith that even you won't stop chasing your
         dreams (your purpose of life) until you achieve it.
         <br />
         You have always been a motivation to me. I have admired you for how hard
-        working and abitious you are. I will always look up to you whenever I
+        working and ambitious you are. I will always look up to you whenever I
         might need motivation myself.
         <br />
         <br />
